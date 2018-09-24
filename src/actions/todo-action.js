@@ -1,17 +1,18 @@
-import {ADD_TODO, REMOVE_TODO, SET_VISIBILITY_FILTER } from './action-types';
+import {ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from './action-types';
 
-/*
- * action creators
- */
-​
-export function addTodo(text) {
-  return { type: ADD_TODO, text }
-}
-​
-export function toggleTodo(index) {
-  return { type: TOGGLE_TODO, index }
-}
-​
-export function setVisibilityFilter(filter) {
-  return { type: SET_VISIBILITY_FILTER, filter }
-}
+let nextTodoId = 0
+export const addTodo = text => ({
+  type: ADD_TODO,
+  id: nextTodoId++,
+  text
+})
+
+export const setVisibilityFilter = filter => ({
+  type: SET_VISIBILITY_FILTER,
+  filter
+})
+
+export const toggleTodo = id => ({
+  type: TOGGLE_TODO,
+  id
+})
