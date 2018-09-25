@@ -17,7 +17,7 @@ const getVisibleTodos = (todos, filter) => {
     }
 }
 const mapStateToProps = (state, ownProps) => ({
-    todos: getVisibleTodos(state.todos, state.visibilityFilters)
+    todos: getVisibleTodos(state.todos, state.visibilityFilter)
 })
 
 const mapDispatchToProps = dispatch => ({
